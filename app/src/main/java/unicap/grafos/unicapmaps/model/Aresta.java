@@ -12,4 +12,17 @@ public class Aresta {
     private String descricaoBA;
 
     //private restrições
+
+    private Vertice getAdjacente(Vertice vertice){
+        if(vertice == null){
+            //exceção
+            return null;
+        }else{
+            if(vertice == A){
+                return B;
+            }else{
+                return A;
+            }
+        }
+    }
 }
