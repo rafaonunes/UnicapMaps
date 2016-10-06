@@ -1,17 +1,22 @@
 package unicap.grafos.unicapmaps.model;
 
 /**
- * Created by Cais Automação on 06/10/2016.
+ * Created by Cais Automação on 06/10/2016. project Unicap Maps
  */
 public class Aresta {
     private int id;
-    private Vertice A;
-    private Vertice B;
+    private Vertice A = null;
+    private Vertice B = null;
     private int custo;
     private String descicaoAB;
     private String descricaoBA;
 
     //private restrições
+
+    public Aresta(Vertice vA, Vertice vB){
+        A = vA;
+        B = vB;
+    }
 
     private Vertice getAdjacente(Vertice vertice){
         if(vertice == null){
@@ -24,5 +29,45 @@ public class Aresta {
                 return A;
             }
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setA(Vertice a) {
+        A = a;
+    }
+
+    public void setB(Vertice b) {
+        B = b;
+    }
+
+    public int getCusto() {
+        return custo;
+    }
+
+    public void setCusto(int custo) {
+        this.custo = custo;
+    }
+
+    public String getDescicaoAB() {
+        return descicaoAB;
+    }
+
+    public void setDescicaoAB(String descicaoAB) {
+        this.descicaoAB = descicaoAB;
+    }
+
+    public String getDescricaoBA() {
+        return descricaoBA;
+    }
+
+    public void setDescricaoBA(String descricaoBA) {
+        this.descricaoBA = descricaoBA;
     }
 }
