@@ -9,9 +9,7 @@ public class Aresta {
     private Vertice A = null;
     private Vertice B = null;
     private int custo;
-    private String descicaoAB;
-    private String descricaoBA;
-
+    private String descricao;
     //private restrições
 
     public Aresta(Vertice vA, Vertice vB){
@@ -31,7 +29,13 @@ public class Aresta {
             }
         }
     }
+    public String getDescricao() {
+        return descricao;
+    }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
     public int getId() {
         return id;
     }
@@ -56,19 +60,4 @@ public class Aresta {
         this.custo = custo;
     }
 
-    public String getDescicaoAB() {
-        return descicaoAB;
-    }
-
-    public void setDescicaoAB(String descicaoAB) {
-        this.descicaoAB = descicaoAB;
-    }
-
-    public String getDescricaoBA() {
-        return descricaoBA;
-    }
-
-    public void setDescricaoBA(String descricaoBA) {
-        this.descricaoBA = descricaoBA;
-    }
 }

@@ -9,19 +9,19 @@ import android.view.Window;
 import android.widget.ProgressBar;
 
 import unicap.grafos.unicapmaps.R;
+import unicap.grafos.unicapmaps.dao.GrafoDao;
 
 public class SplashScreen extends AppCompatActivity {
 
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 2000;
+    private GrafoDao dao = new GrafoDao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
+        dao.montarGrafo();
 
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/

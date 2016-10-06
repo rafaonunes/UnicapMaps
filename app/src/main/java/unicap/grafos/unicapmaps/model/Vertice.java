@@ -10,6 +10,15 @@ public class Vertice {
     private String nome;
     private String descricao;
     private ArrayList<Aresta> arestas = null;
+    private ArrayList<Vertice> adjacentes = null;
+
+    public Vertice(int id) {
+        this.id = id;
+    }
+
+    public void addAdjacente(Vertice novoAdj) {
+        adjacentes.add(novoAdj);
+    }
 
     public int getId() {
         return id;
@@ -35,4 +44,7 @@ public class Vertice {
         this.descricao = descricao;
     }
 
+    public void addAresta(Aresta aresta) {
+        arestas.add(aresta);
+    }
 }
