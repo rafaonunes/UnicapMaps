@@ -13,7 +13,8 @@ public class Grafo {
     private static Grafo grafo = null;
 
     private Grafo() {
-        grafo = new Grafo();
+        vertices =  new ArrayList<>();
+        arestas = new ArrayList<>();
     }
 
     public static Grafo getInstance(){

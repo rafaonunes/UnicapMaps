@@ -14,6 +14,8 @@ public class Vertice {
 
     public Vertice(int id) {
         this.id = id;
+        arestas = new ArrayList<>();
+        adjacentes = new ArrayList<>();
     }
 
     public void addAdjacente(Vertice novoAdj) {

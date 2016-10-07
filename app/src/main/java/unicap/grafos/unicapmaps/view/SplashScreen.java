@@ -15,12 +15,13 @@ public class SplashScreen extends AppCompatActivity {
 
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 2000;
-    private GrafoDao dao = new GrafoDao();
+    private GrafoDao dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        dao = new GrafoDao();
         dao.montarGrafo();
 
         /* New Handler to start the Menu-Activity
