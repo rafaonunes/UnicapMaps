@@ -15,11 +15,16 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        StringBuilder stringText1 = new StringBuilder();
+        StringBuilder stringText2 = new StringBuilder();
+
+        stringText1.append("Total de vertices ").append(grafo.countVertices());
+        stringText2.append("Total de Arestas: ").append(grafo.countArestas());
 
         TextView texto1 = (TextView) findViewById(R.id.text1);
         TextView texto2 = (TextView) findViewById(R.id.text2);
-        texto1.setText("Total de Vertices: " + grafo.countVertices());
-        texto1.setText("Total de Arestas: " + grafo.countArestas());
+        texto1.setText(stringText1);
+        texto2.setText(stringText2);
 
     }
 }
