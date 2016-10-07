@@ -13,26 +13,24 @@ import unicap.grafos.unicapmaps.dao.GrafoDao;
 
 public class SplashScreen extends AppCompatActivity {
 
-    /** Duration of wait **/
-    private final int SPLASH_DISPLAY_LENGTH = 2000;
-    private GrafoDao dao;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        dao = new GrafoDao();
+        GrafoDao dao = new GrafoDao();
         dao.montarGrafo();
 
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/
+        /* Duration of wait */
+        int SPLASH_DISPLAY_LENGTH = 2000;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashScreen.this,Main.class);
-                SplashScreen.this.startActivity(mainIntent);
-                SplashScreen.this.finish();
+                Intent mainIntent = new Intent(SplashScreen.this, Main.class);
+                startActivity(mainIntent);
+                finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

@@ -24,7 +24,6 @@ public class Grafo {
         return grafo;
     }
 
-
     public ArrayList<Vertice> getVertices() {
         return vertices;
     }
