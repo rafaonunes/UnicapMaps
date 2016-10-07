@@ -50,4 +50,8 @@ public class Grafo {
     public int countArestas() {
         return arestas.size();
     }
+
+    public ArrayList<Aresta> getArestas() {
+        return arestas;
+    }
 }

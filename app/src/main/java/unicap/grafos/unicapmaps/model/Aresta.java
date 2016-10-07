@@ -1,5 +1,7 @@
 package unicap.grafos.unicapmaps.model;
 
+import android.hardware.usb.UsbConfiguration;
+
 /**
  * Created by Cais Automação on 06/10/2016. project Unicap Maps
  */
@@ -59,4 +61,11 @@ public class Aresta {
         this.custo = custo;
     }
 
+    public Vertice getA() {
+        return A;
+    }
+
+    public Vertice getB(){
+        return B;
+    }
 }

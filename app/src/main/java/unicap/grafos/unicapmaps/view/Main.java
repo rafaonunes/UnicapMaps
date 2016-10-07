@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import unicap.grafos.unicapmaps.R;
+import unicap.grafos.unicapmaps.controller.GrafoController;
 import unicap.grafos.unicapmaps.model.Grafo;
 
 public class Main extends AppCompatActivity {
@@ -17,12 +18,15 @@ public class Main extends AppCompatActivity {
     private ScaleGestureDetector detectorGestos;
     private ImageView mapaView;
     private Matrix matrizScale = new Matrix();
-
+    private GrafoController gController;
     private Grafo grafo = Grafo.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        gController = new GrafoController();
+
 
         mapaView = (ImageView) findViewById(R.id.mapaView);
         detectorGestos = new ScaleGestureDetector(this, new ScaleListener());
@@ -35,8 +39,10 @@ public class Main extends AppCompatActivity {
 
         TextView texto1 = (TextView) findViewById(R.id.text1);
         TextView texto2 = (TextView) findViewById(R.id.text2);
+        TextView texto3 = (TextView) findViewById(R.id.text3);
         texto1.setText(stringText1);
         texto2.setText(stringText2);
+        texto3.setText(gController.exibirArestas(grafo));
     }
 
 
