@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import unicap.grafos.unicapmaps.R;
@@ -16,19 +19,16 @@ public class Main extends AppCompatActivity {
 
     private Float escala = 1f;
     private ScaleGestureDetector detectorGestos;
-    private ImageView mapaView;
-    private Matrix matrizScale = new Matrix();
-    private GrafoController gController;
+    private RelativeLayout mapaView;
     private Grafo grafo = Grafo.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gController = new GrafoController();
+        GrafoController gController = new GrafoController();
 
-
-        mapaView = (ImageView) findViewById(R.id.mapaView);
+        mapaView = (RelativeLayout) findViewById(R.id.mapaView);
         detectorGestos = new ScaleGestureDetector(this, new ScaleListener());
 
         StringBuilder stringText1 = new StringBuilder();
@@ -51,8 +51,10 @@ public class Main extends AppCompatActivity {
         public boolean onScale(ScaleGestureDetector detector) {
             escala = escala * detector.getScaleFactor();
             escala = Math.max(0.1f, Math.min(escala, 5f));
-            matrizScale.setScale(escala, escala);
-            mapaView.setImageMatrix(matrizScale);
+            ScaleAnimation scaleAnimation = new ScaleAnimation(1f / escala, 1f / escala, 1f / escala, 1f / escala, detector.getFocusX(), detector.getFocusY());
+            scaleAnimation.setDuration(0);
+            scaleAnimation.setFillAfter(true);
+            mapaView.startAnimation(scaleAnimation);
             return true;
         }
     }

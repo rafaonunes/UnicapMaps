@@ -21,17 +21,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="string2" />
-
-    <ImageView
+    <unicap.grafos.unicapmaps.view.ArestaView
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:id="@+id/mapaView"
-        android:scaleType="matrix"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        android:src="@mipmap/mapa_unicap"
-
+        android:layout_height="120dp"
         />
+    <ScrollView
+        android:id="@+id/mapaViewScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/mapaView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/bg1"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Botao"
+                android:layout_centerInParent="true"
+                android:id="@+id/button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Texto normal"
+
+                android:id="@+id/textView"
+                android:layout_below="@+id/button"
+                android:layout_alignStart="@+id/button"
+                android:layout_marginTop="23dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
