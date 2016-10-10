@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -9,33 +10,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:padding="0dp"
     tools:context=".view.Main">
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="string1" />
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="string2" />
-    <unicap.grafos.unicapmaps.view.ArestaView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        />
-    <ScrollView
-        android:id="@+id/mapaViewScroll"
+    <unicap.grafos.unicapmaps.view.ZoomLayout
+        android:id="@+id/mapaViewPort"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:id="@+id/mapaView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@color/bg1"
-            >
+        android:layout_height="match_parent"
+        android:background="@color/bg1"
+        >
 
+        <RelativeLayout
+            android:id="@+id/mapa_conteudo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/mapa_unicap">
+            <unicap.grafos.unicapmaps.view.ArestaView
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,21 +45,9 @@
                 android:layout_below="@+id/button"
                 android:layout_alignStart="@+id/button"
                 android:layout_marginTop="23dp" />
-
         </RelativeLayout>
-    </ScrollView>
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="string3" />
-    </ScrollView>
+    </unicap.grafos.unicapmaps.view.ZoomLayout>
 
 
 </LinearLayout>
